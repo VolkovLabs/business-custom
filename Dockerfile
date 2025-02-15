@@ -65,8 +65,8 @@ COPY img/background.svg /usr/share/grafana/public/img/g8_login_light.svg
 ##################################################################
 
 # Update Title
-RUN sed -i 's|<title>\[\[.AppTitle\]\]</title>|<title>Business App</title>|g' /usr/share/grafana/public/views/index.html
-RUN sed -i 's|Loading Grafana|Loading Business App|g' /usr/share/grafana/public/views/index.html
+RUN sed -i 's|<title>\[\[.AppTitle\]\]</title>|<title>Business Suite</title>|g' /usr/share/grafana/public/views/index.html
+RUN sed -i 's|Loading Grafana|Loading Business Suite|g' /usr/share/grafana/public/views/index.html
 
 ## Update Mega and Help menu
 RUN sed -i "s|\[\[.NavTree\]\],|nav,|g; \
@@ -77,7 +77,7 @@ RUN sed -i "s|\[\[.NavTree\]\],|nav,|g; \
     const connections = nav.find((element) => element.id === 'connections'); \
     if (connections) { connections['url'] = '/datasources'; connections['children'].shift(); } \
     const help = nav.find((element) => element.id === 'help'); \
-    if (help) { help['subTitle'] = 'Business App 4.5.0'; help['children'] = [];} \
+    if (help) { help['subTitle'] = 'Business Suite 11.5.1'; help['children'] = [];} \
     window.grafanaBootData = {|g" \
     /usr/share/grafana/public/views/index.html
 
@@ -91,17 +91,19 @@ RUN sed -i 's|\[navigation.app_sections\]|\[navigation.app_sections\]\nbusiness-
 
 RUN find /usr/share/grafana/public/build/ -name *.js \
 ## Update Title
-    -exec sed -i 's|AppTitle="Grafana"|AppTitle="Business App"|g' {} \; \
+    -exec sed -i 's|AppTitle="Grafana"|AppTitle="Business Suite"|g' {} \; \
 ## Update Login Title
-    -exec sed -i 's|LoginTitle="Welcome to Grafana"|LoginTitle="Business App for Grafana"|g' {} \; \
+    -exec sed -i 's|LoginTitle="Welcome to Grafana"|LoginTitle="Business Suite"|g' {} \; \
 ## Remove Documentation, Support, Community in the Footer
     -exec sed -i 's|\[{target:"_blank",id:"documentation".*grafana_footer"}\]|\[\]|g' {} \; \
 ## Remove Edition in the Footer
     -exec sed -i 's|({target:"_blank",id:"license",.*licenseUrl})|()|g' {} \; \
 ## Remove Version in the Footer
-    -exec sed -i 's|({target:"_blank",id:"version",text:f.versionString,url:D?"https://github.com/grafana/grafana/blob/main/CHANGELOG.md":void 0})|()|g' {} \; \
+    -exec sed -i 's|({target:"_blank",id:"version",text:..versionString,url:D?"https://github.com/grafana/grafana/blob/main/CHANGELOG.md":void 0})|()|g' {} \; \
 ## Remove News icon
-    -exec sed -i 's|(.,.....)(....,{className:.,onClick:.,iconOnly:!0,icon:"rss","aria-label":"News"})|null|g' {} \; \
+    -exec sed -i 's|(0,t.jsx)(...,{className:ge,onClick:.*,iconOnly:!0,icon:"rss","aria-label":"News"})|null|g' {} \; \
+## Remove Old Dashboard page icon
+    -exec sed -i 's|(0,t.jsx)(u.I,{tooltip:"Switch to old dashboard page",icon:"apps",onClick:()=>{s.Ny.partial({scenes:!1})}},"view-in-old-dashboard-button")|null|g' {} \; \
 ## Remove Open Source icon
     -exec sed -i 's|.push({target:"_blank",id:"version",text:`${..edition}${.}`,url:..licenseUrl,icon:"external-link-alt"})||g' {} \;
 
