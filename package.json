@@ -13,7 +13,7 @@
   "devDependencies": {
     "@babel/core": "^7.25.9",
     "@grafana/eslint-config": "^8.0.0",
-    "@grafana/plugin-e2e": "^1.9.0",
+    "@grafana/plugin-e2e": "^1.18.2",
     "@grafana/tsconfig": "^2.0.0",
     "@playwright/test": "^1.48.1",
     "@swc/core": "^1.7.39",
@@ -70,5 +70,5 @@
     "test:ci": "jest --maxWorkers 4 --coverage",
     "upgrade": "npm upgrade --save"
   },
-  "version": "4.5.0"
+  "version": "11.5.1"
 }
