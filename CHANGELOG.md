@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.5.0 (2025-02-15)
+
+### Features / Enhancements
+
+- Updated to Grafana 11.5.1 image (#117)
+
 ## 4.4.0 (2024-10-22)
 
 ### Features / Enhancements

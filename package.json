@@ -53,7 +53,7 @@
     "node": ">=20"
   },
   "license": "Apache-2.0",
-  "name": "business-suite",
+  "name": "business-app",
   "scripts": {
     "build": "webpack -c ./.config/webpack/webpack.config.ts --env production",
     "dev": "webpack -w -c ./.config/webpack/webpack.config.ts --env development",
@@ -70,5 +70,5 @@
     "test:ci": "jest --maxWorkers 4 --coverage",
     "upgrade": "npm upgrade --save"
   },
-  "version": "4.4.0"
+  "version": "4.5.0"
 }
