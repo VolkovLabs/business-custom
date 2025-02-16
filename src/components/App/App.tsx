@@ -7,7 +7,7 @@ import { PluginsPage } from './Plugins.page';
 /**
  * Properties
  */
-interface Props extends AppRootProps<AppSettings> {}
+type Props = AppRootProps<AppSettings>;
 
 /**
  * App

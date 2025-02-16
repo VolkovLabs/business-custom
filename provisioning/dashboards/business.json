@@ -24,8 +24,8 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
+  "id": 3,
   "links": [],
-  "liveNow": false,
   "panels": [
     {
       "datasource": {
@@ -99,14 +99,19 @@
         },
         "showAdvancedTypes": false
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "refId": "A"
+        }
+      ],
       "title": "Business App",
       "type": "canvas"
     }
   ],
+  "preload": false,
   "refresh": "",
-  "revision": 1,
-  "schemaVersion": 39,
+  "schemaVersion": 40,
   "tags": [],
   "templating": {
     "list": []
