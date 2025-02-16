@@ -1,9 +1,4 @@
 /**
- * App Settings
- */
-export interface AppSettings {}
-
-/**
  * SVG
  */
 export interface SvgProps extends React.HTMLAttributes<SVGElement> {
