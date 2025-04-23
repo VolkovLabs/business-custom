@@ -1,5 +1,12 @@
 # Change Log
 
+## 11.6.1 (2025-04-23)
+
+### Features / Enhancements
+
+- Updated to Grafana 11.6.1 image (#119)
+- Remove Application plugins (#119)
+
 ## 11.5.1 (2025-02-15)
 
 ### Features / Enhancements

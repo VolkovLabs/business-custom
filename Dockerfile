@@ -1,4 +1,4 @@
-FROM grafana/grafana-oss:11.5.1
+FROM grafana/grafana-oss:11.6.1
 
 ##################################################################
 ## CONFIGURATION
@@ -24,14 +24,6 @@ ENV GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/etc/grafana/provisioning/dashboar
 ## Paths
 ENV GF_PATHS_PROVISIONING="/etc/grafana/provisioning"
 ENV GF_PATHS_PLUGINS="/var/lib/grafana/plugins"
-
-##################################################################
-## Copy Artifacts
-## Required for the App plugin
-##################################################################
-
-COPY --chown=grafana:root dist /app
-COPY entrypoint.sh /
 
 ## Copy Provisioning
 COPY --chown=grafana:root provisioning $GF_PATHS_PROVISIONING
@@ -77,12 +69,9 @@ RUN sed -i "s|\[\[.NavTree\]\],|nav,|g; \
     const connections = nav.find((element) => element.id === 'connections'); \
     if (connections) { connections['url'] = '/datasources'; connections['children'].shift(); } \
     const help = nav.find((element) => element.id === 'help'); \
-    if (help) { help['subTitle'] = 'Business Suite 11.5.1'; help['children'] = [];} \
+    if (help) { help['subTitle'] = 'Business Customization 11.6.1'; help['children'] = [];} \
     window.grafanaBootData = {|g" \
     /usr/share/grafana/public/views/index.html
-
-# Move Business App to navigation root section
-RUN sed -i 's|\[navigation.app_sections\]|\[navigation.app_sections\]\nbusiness-app=root|g' /usr/share/grafana/conf/defaults.ini
 
 ##################################################################
 ## HANDS-ON
@@ -99,9 +88,7 @@ RUN find /usr/share/grafana/public/build/ -name *.js \
 ## Remove Edition in the Footer
     -exec sed -i 's|({target:"_blank",id:"license",.*licenseUrl})|()|g' {} \; \
 ## Remove Version in the Footer
-    -exec sed -i 's|({target:"_blank",id:"version",text:..versionString,url:D?"https://github.com/grafana/grafana/blob/main/CHANGELOG.md":void 0})|()|g' {} \; \
-## Remove News icon
-    -exec sed -i 's|(0,t.jsx)(...,{className:ge,onClick:.*,iconOnly:!0,icon:"rss","aria-label":"News"})|null|g' {} \; \
+    -exec sed -i 's|({target:"_blank",id:"version",text:..versionString,url:.?"https://github.com/grafana/grafana/blob/main/CHANGELOG.md":void 0})|()|g' {} \; \
 ## Remove Old Dashboard page icon
     -exec sed -i 's|(0,t.jsx)(u.I,{tooltip:"Switch to old dashboard page",icon:"apps",onClick:()=>{s.Ny.partial({scenes:!1})}},"view-in-old-dashboard-button")|null|g' {} \; \
 ## Remove Open Source icon
@@ -150,6 +137,3 @@ RUN rm -rf /usr/share/grafana/public/app/plugins/panel/alertlist \
 ##################################################################
 
 USER grafana
-
-## Entrypoint
-ENTRYPOINT [ "/bin/bash", "/entrypoint.sh" ]
