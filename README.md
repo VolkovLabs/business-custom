@@ -1,8 +1,6 @@
-# Business App for Grafana
+# Business Customization for Grafana
 
-![App](https://raw.githubusercontent.com/volkovlabs/business-app/main/img/app.png)
-
-![Grafana](https://img.shields.io/badge/Grafana-11.5-orange)
+![Grafana](https://img.shields.io/badge/Grafana-11.6-orange)
 [![YouTube](https://img.shields.io/badge/YouTube-Channel-red)](https://youtube.com/@volkovlabs)
 ![CI](https://github.com/volkovlabs/business-app/workflows/CI/badge.svg)
 ![E2E](https://github.com/volkovlabs/business-app/workflows/E2E/badge.svg)
@@ -11,7 +9,7 @@
 
 ## Introduction
 
-The Business App includes a Docker image with customized Grafana and an application plugin.
+The Business Customization is a Docker image with customized Grafana.
 
 ## Customization
 
