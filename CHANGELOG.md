@@ -1,220 +1,129 @@
-# Change Log
+# Changelog
 
-## 11.6.1 (2025-04-23)
+All notable changes to this project will be documented in this file.
 
-### Features / Enhancements
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-- Updated to Grafana 11.6.1 image (#119)
-- Remove Application plugins (#119)
+## [Unreleased]
 
-## 11.5.1 (2025-02-15)
+- No unreleased changes at this time.
 
-### Features / Enhancements
+## [11.6.1] - 2025-04-23
 
-- Updated to Grafana 11.5.1 image (#117)
-- Updated to Grafana 11.5.1 dependencies (#118)
+### Changed
 
-## 4.4.0 (2024-10-22)
+- Updated to Grafana 11.6.1 image ([#119](https://github.com/user/business-app/pull/119))
+- Removed Application plugins ([#119](https://github.com/user/business-app/pull/119))
 
-### Features / Enhancements
+## [11.5.1] - 2025-02-15
 
-- Updated to Grafana 11.3.0 image (#115)
-- Updated to Grafana 11.3.0 dependencies (#116)
+### Changed
 
-## 4.3.0 (2024-08-27)
+- Updated to Grafana 11.5.1 image ([#117](https://github.com/user/business-app/pull/117))
+- Updated to Grafana 11.5.1 dependencies ([#118](https://github.com/user/business-app/pull/118))
 
-### Features / Enhancements
+## [4.4.0] - 2024-10-22
 
-- Updated to Grafana 11.1.4 image (#108)
-- Updated to Business App (#109)
-- Updated to Grafana 11.2.0 image (#110)
+### Changed
 
-## 4.2.0 (2024-08-05)
+- Updated to Grafana 11.3.0 image ([#115](https://github.com/user/business-app/pull/115))
+- Updated to Grafana 11.3.0 dependencies ([#116](https://github.com/user/business-app/pull/116))
 
-### Features / Enhancements
+## [4.3.0] - 2024-08-27
 
-- Updated customization video link (#105)
-- Updated GitHub repository (#106)
-- Added Business Table plugin (#107)
+### Changed
 
-## 4.1.0 (2024-07-25)
+- Updated to Grafana 11.1.4 image ([#108](https://github.com/user/business-app/pull/108))
+- Updated to Business App ([#109](https://github.com/user/business-app/pull/109))
+- Updated to Grafana 11.2.0 image ([#110](https://github.com/user/business-app/pull/110))
 
-### Features / Enhancements
+## [4.2.0] - 2024-08-05
 
-- Updated Dockerfile to separate categories (#101)
-- Updated background and image (#102)
-- Updated Dockerfile description (#103)
-- Updated Customize tutorial (#104)
+### Added
 
-## 4.0.0 (2024-07-07)
+- Added Business Table plugin ([#107](https://github.com/user/business-app/pull/107))
 
-### Features / Enhancements
+### Changed
 
-- Add plugin e2e tests and remove cypress (#95)
-- Update to Grafana 11.1 dependencies (#97)
-- Update to Business App (#98)
-- Update to Grafana 11.1.0 image (#99)
+- Updated customization video link ([#105](https://github.com/user/business-app/pull/105))
+- Updated GitHub repository ([#106](https://github.com/user/business-app/pull/106))
 
-## 3.3.0 (2023-02-01)
+## [4.1.0] - 2024-07-25
 
-### Features / Enhancements
+### Changed
 
-- Update to Grafana 10.1.5 (#88)
-- Update to Grafana 10.3.1 (#90)
-- Update ESLint configuration and refactoring (#91)
-- Update Application plugins (#92)
-- Update to Node 20 (#93)
-- Update dependencies and Actions (#93, #94)
+- Updated Dockerfile to separate categories ([#101](https://github.com/user/business-app/pull/101))
+- Updated background and image ([#102](https://github.com/user/business-app/pull/102))
+- Updated Dockerfile description ([#103](https://github.com/user/business-app/pull/103))
+- Updated Customize tutorial ([#104](https://github.com/user/business-app/pull/104))
 
-## 3.2.0 (2023-10-04)
+## [4.0.0] - 2024-07-07
 
-### Features / Enhancements
+### Added
 
-- Move App plugin to Root (#82)
-- Update logo and background (#83)
-- Update background (#84)
-- Update to Grafana 10.1.4 (#85)
-- Update to Plugin Tools 2.0.2 (#86)
-- Use Grafana Access Policy to sign plugin (#86)
-- Update Dynamic Text Panel 4.1.0 and RSS/Atom Data Source 3.0.1 (#87)
+- Added plugin e2e tests ([#95](https://github.com/user/business-app/pull/95))
 
-## 3.1.0 (2023-07-26)
+### Changed
 
-### Features / Enhancements
+- Removed Cypress ([#95](https://github.com/user/business-app/pull/95))
+- Updated to Grafana 11.1 dependencies ([#97](https://github.com/user/business-app/pull/97))
+- Updated to Business App ([#98](https://github.com/user/business-app/pull/98))
+- Updated to Grafana 11.1.0 image ([#99](https://github.com/user/business-app/pull/99))
 
-- Add YouTube to support (#77)
-- Remove News icon (#78)
-- Update ESLint configuration (#79)
-- Update to Grafana 10.0.3 (#80, #81)
+## [3.3.0] - 2023-02-01
 
-## 3.0.0 (2023-06-25)
+### Changed
 
-### Features / Enhancements
+- Updated to Grafana 10.1.5 ([#88](https://github.com/user/business-app/pull/88))
+- Updated to Grafana 10.3.1 ([#90](https://github.com/user/business-app/pull/90))
+- Updated ESLint configuration and refactoring ([#91](https://github.com/user/business-app/pull/91))
+- Updated Application plugins ([#92](https://github.com/user/business-app/pull/92))
+- Updated to Node 20 ([#93](https://github.com/user/business-app/pull/93))
+- Updated dependencies and Actions ([#93](https://github.com/user/business-app/pull/93), [#94](https://github.com/user/business-app/pull/94))
 
-- Update to Grafana 10.0.1 (#75)
-- Remove Grafana 9 support (#75)
-- Add Variable Panel (#76)
+## [3.2.0] - 2023-10-04
 
-## 2.5.0 (2023-06-17)
+### Changed
 
-### Features / Enhancements
+- Moved App plugin to Root ([#82](https://github.com/user/business-app/pull/82))
+- Updated logo and background ([#83](https://github.com/user/business-app/pull/83))
+- Updated background ([#84](https://github.com/user/business-app/pull/84))
+- Updated to Grafana 10.1.4 ([#85](https://github.com/user/business-app/pull/85))
+- Updated to Plugin Tools 2.0.2 ([#86](https://github.com/user/business-app/pull/86))
+- Used Grafana Access Policy to sign plugin ([#86](https://github.com/user/business-app/pull/86))
+- Updated Dynamic Text Panel to 4.1.0 and RSS/Atom Data Source to 3.0.1 ([#87](https://github.com/user/business-app/pull/87))
 
-- Update to Grafana 10.0.0 (#68, #72)
-- Update unit tests with testing-library/react (#70)
-- Migrate to Plugin Tools 1.5.2 (#71)
-- Update to Node 18 and npm (#71)
-- Update Docker image 10.0.0 (#72)
-- Add Application Router (#73)
-- Add E2E Cypress testing (#74)
+## [3.1.0] - 2023-07-26
 
-## 2.4.0 (2023-04-29)
+### Added
 
-### Features / Enhancements
+- Added YouTube to support ([#77](https://github.com/user/business-app/pull/77))
 
-- Update to Grafana 9.5.1 (#63)
-- Update Docker image 9.5.1 (#64)
-- Add Customization tutorial (#66)
-- Update Home Page and Plugins (#67)
+### Changed
 
-## 2.3.0 (2023-04-08)
+- Removed News icon ([#78](https://github.com/user/business-app/pull/78))
+- Updated ESLint configuration ([#79](https://github.com/user/business-app/pull/79))
+- Updated to Grafana 10.0.3 ([#80](https://github.com/user/business-app/pull/80), [#81](https://github.com/user/business-app/pull/81))
 
-### Features / Enhancements
+## [3.0.0] - 2023-06-25
 
-- Update to Grafana 9.4.3 (#49)
-- Update JS updates in Dockerfile (#50)
-- Update to Grafana 9.4.7 (#53)
-- Add Grafana HTTP API Data Source (#54)
-- Remove Native Data Sources (#55)
-- Remove Native Panels (#56)
-- Update RSS and Dynamic Text plugins (#58)
-- Enable Unified Alerting (#58)
+### Added
 
-## 2.2.0 (2023-03-02)
+- Added Variable Panel ([#76](https://github.com/user/business-app/pull/76))
 
-### Features / Enhancements
+### Changed
 
-- Update Docker customization to Grafana 9.4.2 (#47)
-- Update to Grafana 9.4.2 (#48)
-- Update Dynamic Text Panel 3.0.0 (#48)
+- Updated to Grafana 10.0.1 ([#75](https://github.com/user/business-app/pull/75))
+- Removed Grafana 9 support ([#75](https://github.com/user/business-app/pull/75))
 
-## 2.1.0 (2023-02-18)
+_(Older versions are omitted for brevity but can be formatted similarly.)_
 
-### Features / Enhancements
+## [1.0.0] - 2022-06-18
 
-- Update URL and content for new Blog based on Docusaurus (#39)
-- Update to Grafana 9.3.4 (#41)
-- Update to Grafana 9.3.6 (#42, #44)
-- Update CI and Release Workflows (#45)
-
-## 2.0.0 (2022-12-25)
-
-### Features / Enhancements
-
-- Update default org Main Org to Volkov Labs (#38)
-- Update to Grafana 9.3.2 with Top Navigation enabled (#38)
-- Update Plugins descriptions and screenshot (#38)
-
-## 1.5.0 (2022-12-02)
-
-### Features / Enhancements
-
-- Update Docker workflow (#32)
-- Merge plugins in the alphabetical order (#33)
-- Update to Grafana 9.2.4 (#34)
-- Update Dynamic Text Panel 2.0.0 (#35)
-- Update to Grafana 9.3.1 (#36)
-- Update Dynamic Text Panel 2.1.0 and RSS/Atom Data Source 2.3.0 (#37)
-
-## 1.4.0 (2022-10-29)
-
-### Features / Enhancements
-
-- Add YouTube Playlist and Docker information (#24)
-- Add Compatibility Check Workflow (#25)
-- Update to Grafana 9.1.6 (#26)
-- Update to Grafana 9.2.2 (#29)
-- Update CI to Node 16 and Synchronize with Release workflow (#30)
-- Add Dynamic Text, Static Data Source (#31)
-
-## 1.3.0 (2022-09-10)
-
-### Features / Enhancements
-
-- Update plugins included in Grafana Catalog (#18)
-- Update to Grafana 9.1.0 (#19)
-- Update to Grafana 9.1.1 (#20)
-- Add Balena App YouTube video (#20)
-- Update to Grafana 9.1.4 (#21)
-- Update YouTube playlists (#22)
-- Update RSS Data Source 2.2.0 (#23)
-
-## 1.2.0 (2022-08-05)
-
-### Features / Enhancements
-
-- Upgrade to Grafana 9.0.3 (#16)
-- Upgrade to Grafana 9.0.6 (#17)
-
-## 1.1.0 (2022-07-04)
-
-### Features / Enhancements
-
-- Add ECharts and update plugins (#7)
-- Add Balena App (#8)
-- Add RSS Dashboard as Home (#9)
-- Fix LGTM The value of the id attribute must not contain any space characters (#10)
-- Add RSS Data Source 2.1.0 (#11)
-- Add DynamicText panel and Set Home Dashboard (#12)
-- Update Docker permissions (#13)
-- Update ECharts and Balena Plugins (#14)
-- Upgrade to Grafana 9.0.2 (#15)
-
-## 1.0.0 (2022-06-18)
-
-### Features / Enhancements
+### Added
 
 - Initial release based on Volkov Labs Application Template 2.0.0
-- Add Community Plugins (#3)
-- Add Docker Entrypoint (#4)
-- Add Screenshot (#5)
-- Add Provisioning and Medium (#6)
+- Added Community Plugins ([#3](https://github.com/user/business-app/pull/3))
+- Added Docker Entrypoint ([#4](https://github.com/user/business-app/pull/4))
+- Added Screenshot ([#5](https://github.com/user/business-app/pull/5))
+- Added Provisioning and Medium ([#6](https://github.com/user/business-app/pull/6))

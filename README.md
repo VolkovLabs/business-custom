@@ -2,48 +2,43 @@
 
 ![Grafana](https://img.shields.io/badge/Grafana-11.6-orange)
 [![YouTube](https://img.shields.io/badge/YouTube-Channel-red)](https://youtube.com/@volkovlabs)
-![CI](https://github.com/volkovlabs/business-app/workflows/CI/badge.svg)
-![E2E](https://github.com/volkovlabs/business-app/workflows/E2E/badge.svg)
-[![codecov](https://codecov.io/gh/VolkovLabs/business-app/branch/main/graph/badge.svg)](https://codecov.io/gh/VolkovLabs/business-app)
-[![CodeQL](https://github.com/VolkovLabs/business-app/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/business-app/actions/workflows/codeql-analysis.yml)
+![Docker](https://github.com/volkovlabs/business-custom/workflows/Docker/badge.svg)
 
-## Introduction
+## Overview
 
-The Business Customization is a Docker image with customized Grafana.
+**Business Customization for Grafana** provides a tailored Docker image with a pre-configured Grafana setup, designed to streamline business use cases. Built on the latest Grafana version, this project offers a ready-to-use intructions for organizations looking to customize Grafana for their specific needs.
 
-## Customization
+## Watch the Customization Tutorial
 
-Months of work bundled with deep expertise nicely wrapped into a 7-minute long video revealing simple steps to customize Grafana. In this tutorial, we answered all community questions we collected to this moment.
+Learn how to customize Grafana in just 7 minutes! This video tutorial compiles months of expertise and answers frequently asked community questions.
 
-[![Customization](https://raw.githubusercontent.com/volkovlabs/business-app/main/img/grafana-11.png)](https://youtu.be/8ArQ0vlWA88)
-
-## Docker image
-
-We use the custom Docker image for all our projects and keep it up-to-date with the latest version of Grafana.
-
-```sh
-docker pull ghcr.io/volkovlabs/app:latest
-```
+[![Customization Tutorial](https://raw.githubusercontent.com/volkovlabs/business-custom/main/img/grafana-11.png)](https://youtu.be/8ArQ0vlWA88)
 
 ## Business Suite for Grafana
 
-The Business Suite is a collection of open source plugins created and actively maintained by Volkov Labs.
+The **Business Suite** is a curated set of open-source plugins developed and maintained by Volkov Labs. These plugins are designed to address common business needs with an intuitive interface, backed by:
 
-The collection aims to solve the most frequent business tasks by providing an intuitive interface with detailed written documentation, examples, and video tutorials.
+- **Detailed Documentation**: Step-by-step guides and examples.
+- **Video Tutorials**: Visual walkthroughs for easier learning.
+- **Community Support**: Active engagement and feedback channels.
 
 [![Business Suite for Grafana](https://raw.githubusercontent.com/VolkovLabs/.github/main/business.png)](https://volkovlabs.io/plugins/)
 
 ### Enterprise Support
 
-With the [Business Suite Enterprise](https://volkovlabs.io/pricing/), you're not just getting a product, you're getting a complete support system. You'll have a designated support team ready to tackle any issues.
+Elevate your experience with the [Business Suite Enterprise](https://volkovlabs.io/pricing/) plan, which includes:
 
-You can contact us via Zendesk, receive priority in feature requests and bug fixes, meet with us for in-person consultation, and get access to the Business Intelligence. It's a package that's designed to make your life easier.
+- **Dedicated Support Team**: Direct assistance via Zendesk.
+- **Priority Features & Fixes**: Faster response to feature requests and bug resolutions.
+- **Personal Consultations**: In-person meetings for tailored guidance.
+- **Business Intelligence Access**: Advanced tools and insights for decision-making.
 
-## Always happy to hear from you
+## Connect With Us
 
-- Subscribe to our [YouTube Channel](https://youtube.com/@volkovlabs) and leave your comments.
-- Become a [Business Suite sponsor](https://github.com/sponsors/VolkovLabs).
+We value your feedback and are always eager to engage with our community:
+
+- **Subscribe to our [YouTube Channel](https://youtube.com/@volkovlabs)**: Watch tutorials and leave comments.
 
 ## License
 
-Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/business-app/blob/main/LICENSE).
+This project is licensed under the Apache License Version 2.0. For more details, see the [LICENSE](https://github.com/volkovlabs/business-custom/blob/main/LICENSE) file.
