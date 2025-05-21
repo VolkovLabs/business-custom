@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
-- Updated to Grafana 12.0.0 ([#119](https://github.com/volkovlabs/business-custom/pull/120))
+- Updated to Grafana 12.0.0 ([#122](https://github.com/volkovlabs/business-custom/pull/122))
 
 ## [11.6.1] - 2025-04-23
 
