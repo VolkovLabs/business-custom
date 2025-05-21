@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 3,
+  "id": 2,
   "links": [],
   "panels": [
     {
@@ -42,8 +42,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -99,31 +98,31 @@
         },
         "showAdvancedTypes": false
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "refId": "A"
         }
       ],
-      "title": "Business App",
+      "title": "",
+      "transparent": true,
       "type": "canvas"
     }
   ],
   "preload": false,
-  "refresh": "",
-  "schemaVersion": 40,
+  "refresh": "5s",
+  "schemaVersion": 41,
   "tags": [],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-1y",
-    "to": "now"
+    "from": "now/M",
+    "to": "now/M"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Business Suite",
-  "uid": "O4tc_E6Gz",
-  "version": 1,
-  "weekStart": ""
+  "uid": "0e76e4a1-f807-49bd-9754-ae0b75c896df",
+  "version": 1
 }

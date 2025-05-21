@@ -1,6 +1,6 @@
 # Business Customization for Grafana
 
-![Grafana](https://img.shields.io/badge/Grafana-11.6-orange)
+![Grafana](https://img.shields.io/badge/Grafana-12.0-orange)
 [![YouTube](https://img.shields.io/badge/YouTube-Channel-red)](https://youtube.com/@volkovlabs)
 ![Docker](https://github.com/volkovlabs/business-custom/workflows/Docker/badge.svg)
 

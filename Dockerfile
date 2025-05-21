@@ -1,4 +1,4 @@
-FROM grafana/grafana-oss:11.6.1
+FROM grafana/grafana-oss:12.0.0
 
 ##################################################################
 ## CONFIGURATION
@@ -6,7 +6,7 @@ FROM grafana/grafana-oss:11.6.1
 
 ## Set Grafana options
 ENV GF_ENABLE_GZIP=true
-ENV GF_USERS_DEFAULT_THEME=light
+ENV GF_USERS_DEFAULT_THEME=tron
 
 ## Enable Anonymous Authentication
 ENV GF_AUTH_ANONYMOUS_ENABLED=true
@@ -20,6 +20,19 @@ ENV GF_ANALYTICS_CHECK_FOR_UPDATES=false
 
 ## Set Home Dashboard
 ENV GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/etc/grafana/provisioning/dashboards/business.json
+
+## Disable Snapshot
+ENV GF_SNAPSHOTS_ENABLED=false
+
+## Disable News Feed
+ENV GF_NEWS_NEWS_FEED_ENABLED=false
+
+# Disable Alerting
+ENV GF_ALERTING_ENABLED=false \
+    GF_UNIFIED_ALERTING_ENABLED=false
+
+# Disable pre-installed plugins
+ENV GF_PLUGINS_PREINSTALL_DISABLED=true
 
 ## Paths
 ENV GF_PATHS_PROVISIONING="/etc/grafana/provisioning"
@@ -69,7 +82,13 @@ RUN sed -i "s|\[\[.NavTree\]\],|nav,|g; \
     const connections = nav.find((element) => element.id === 'connections'); \
     if (connections) { connections['url'] = '/datasources'; connections['children'].shift(); } \
     const help = nav.find((element) => element.id === 'help'); \
-    if (help) { help['subTitle'] = 'Business Customization 11.6.1'; help['children'] = [];} \
+    if (help) { help['subTitle'] = 'Business Customization 12.0'; help['children'] = [];} \
+    window.grafanaBootData = {|g" \
+    /usr/share/grafana/public/views/index.html
+
+## Update the Mega Menu
+RUN sed -i "s|window.grafanaBootData = {| \
+    nav.splice(3, 2); \
     window.grafanaBootData = {|g" \
     /usr/share/grafana/public/views/index.html
 
@@ -82,7 +101,7 @@ RUN find /usr/share/grafana/public/build/ -name *.js \
 ## Update Title
     -exec sed -i 's|AppTitle="Grafana"|AppTitle="Business Suite"|g' {} \; \
 ## Update Login Title
-    -exec sed -i 's|LoginTitle="Welcome to Grafana"|LoginTitle="Business Suite"|g' {} \; \
+    -exec sed -i 's|LoginTitle="Welcome to Grafana"|LoginTitle="Business Suite for Grafana"|g' {} \; \
 ## Remove Documentation, Support, Community in the Footer
     -exec sed -i 's|\[{target:"_blank",id:"documentation".*grafana_footer"}\]|\[\]|g' {} \; \
 ## Remove Edition in the Footer
@@ -92,7 +111,12 @@ RUN find /usr/share/grafana/public/build/ -name *.js \
 ## Remove Old Dashboard page icon
     -exec sed -i 's|(0,t.jsx)(d.I,{tooltip:(0,b.t)("dashboard.toolbar.switch-old-dashboard","Switch to old dashboard page"),icon:"apps",onClick:()=>{s.Ny.partial({scenes:!1})}},"view-in-old-dashboard-button")|null|g' {} \; \
 ## Remove Open Source icon
-    -exec sed -i 's|.push({target:"_blank",id:"version",text:`${..edition}${.}`,url:..licenseUrl,icon:"external-link-alt"})||g' {} \;
+    -exec sed -i 's|.push({target:"_blank",id:"version",text:`${..edition}${.}`,url:..licenseUrl,icon:"external-link-alt"})||g' {} \; \
+## Disable Mega Menu docked
+    -exec sed -i 's|this.megaMenuDocked=\(!!\(.*\)xxl)),\)|this.megaMenuDocked=false,|g' \;
+
+## Update Toggles
+RUN sed -i 's|\[feature_toggles\]|\[feature_toggles\]\npinNavItems = false\nonPremToCloudMigrations = false\ncorrelations = false|g' /usr/share/grafana/conf/defaults.ini
 
 ##################################################################
 ## CLEANING
