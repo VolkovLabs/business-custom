@@ -28,7 +28,7 @@ ENV GF_ENABLE_GZIP=true \
     GF_PLUGINS_PREINSTALL_DISABLED=true \
     GF_PATHS_PROVISIONING=/etc/grafana/provisioning \
     GF_PATHS_PLUGINS=/var/lib/grafana/plugins \
-    GF_FEATURE_TOGGLES_ENABLE=kubernetesDashboards dashboardNewLayouts
+    GF_FEATURE_TOGGLES_ENABLE="kubernetesDashboards dashboardNewLayouts"
 
 # Copy provisioning files with proper ownership
 COPY --chown=grafana:root provisioning/ ${GF_PATHS_PROVISIONING}/
