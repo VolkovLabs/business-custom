@@ -8,7 +8,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
-- Updated to Grafana 12.0.1 ([#123](https://github.com/volkovlabs/business-custom/pull/123))
+- Updated to Grafana 12.0.1 ([#124](https://github.com/volkovlabs/business-custom/pull/124))
+- Disabled Public Dashboards ([#124](https://github.com/volkovlabs/business-custom/pull/124))
+- Enabled New Dashboard Layout ([#124](https://github.com/volkovlabs/business-custom/pull/124))
 
 ## [12.0.0] - 2025-05-21
 
