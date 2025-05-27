@@ -1,10 +1,10 @@
 # Use a specific version of Grafana OSS as the base image for reproducibility
-FROM grafana/grafana-oss:12.0.0
+FROM grafana/grafana-oss:12.0.1
 
 # Label the image for better tracking and metadata
 LABEL maintainer="Volkov Labs <support@volkovlabs.io>" \
       description="Customized Grafana image for Business Suite" \
-      version="12.0.0"
+      version="12.0.1"
 
 # Switch to root user for system-level operations
 USER root
@@ -20,12 +20,15 @@ ENV GF_ENABLE_GZIP=true \
     GF_ANALYTICS_CHECK_FOR_UPDATES=false \
     GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/etc/grafana/provisioning/dashboards/business.json \
     GF_SNAPSHOTS_ENABLED=false \
+    GF_EXPLORE_ENABLED=false \
     GF_NEWS_NEWS_FEED_ENABLED=false \
     GF_ALERTING_ENABLED=false \
+    GF_PUBLIC_DASHBOARDS_ENABLED=false \
     GF_UNIFIED_ALERTING_ENABLED=false \
     GF_PLUGINS_PREINSTALL_DISABLED=true \
     GF_PATHS_PROVISIONING=/etc/grafana/provisioning \
-    GF_PATHS_PLUGINS=/var/lib/grafana/plugins
+    GF_PATHS_PLUGINS=/var/lib/grafana/plugins \
+    GF_FEATURE_TOGGLES_ENABLE=dashboardNewLayouts
 
 # Copy provisioning files with proper ownership
 COPY --chown=grafana:root provisioning/ ${GF_PATHS_PROVISIONING}/
@@ -55,11 +58,11 @@ RUN sed -i "s|\[\[.NavTree\]\],|nav,|g; \
     const connections = nav.find((element) => element.id === 'connections'); \
     if (connections) { connections['url'] = '/datasources'; connections['children'].shift(); } \
     const help = nav.find((element) => element.id === 'help'); \
-    if (help) { help['subTitle'] = 'Business Customization 12.0'; help['children'] = [];} \
+    if (help) { help['subTitle'] = 'Business Customization 12.0.1'; help['children'] = [];} \
     window.grafanaBootData = {|g" \
     /usr/share/grafana/public/views/index.html && \
     sed -i "s|window.grafanaBootData = {| \
-    nav.splice(3, 2); \
+    nav.splice(3, 1); \
     window.grafanaBootData = {|g" \
     /usr/share/grafana/public/views/index.html
 
