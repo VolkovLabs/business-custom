@@ -1,6 +1,6 @@
 # Business Customization for Grafana
 
-![Grafana](https://img.shields.io/badge/Grafana-12.0-orange)
+![Grafana](https://img.shields.io/badge/Grafana-12.1-orange)
 [![YouTube](https://img.shields.io/badge/YouTube-Channel-red)](https://youtube.com/@volkovlabs)
 ![Docker](https://github.com/volkovlabs/business-custom/workflows/Docker/badge.svg)
 
@@ -31,7 +31,7 @@ Elevate your experience with the [Business Suite Enterprise](https://volkovlabs.
 - **Dedicated Support Team**: Direct assistance via Zendesk.
 - **Priority Features & Fixes**: Faster response to feature requests and bug resolutions.
 - **Personal Consultations**: In-person meetings for tailored guidance.
-- **Business Intelligence Access**: Advanced tools and insights for decision-making.
+- **Business Intelligence Platform**: Advanced tools and insights for decision-making.
 
 ## Connect With Us
 

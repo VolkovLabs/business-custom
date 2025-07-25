@@ -7,7 +7,5 @@ services:
     entrypoint: /run.sh
     ports:
       - 3000:3000/tcp
-    environment:
-      - GF_INSTALL_PLUGINS=marcusolsson-static-datasource
     volumes:
       - ./provisioning:/etc/grafana/provisioning
