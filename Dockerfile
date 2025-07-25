@@ -42,7 +42,7 @@ COPY --chown=grafana:root img/background.svg /usr/share/grafana/public/img/g8_lo
 COPY --chown=grafana:root img/background.svg /usr/share/grafana/public/img/g8_login_light.svg
 
 # Replace Logo
-COPY src/img/logo.svg /tmp/logo.svg
+COPY img/logo.svg /tmp/logo.svg
 RUN find /usr/share/grafana/public/build/static/img -type f -name 'grafana_icon.*.svg' -exec sh -c 'mv /tmp/logo.svg "$(dirname {})/$(basename {})" && chmod 644 "$(dirname {})/$(basename {})"' \;
 
 ##################################################################
