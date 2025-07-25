@@ -1,10 +1,10 @@
 # Use a specific version of Grafana OSS as the base image for reproducibility
-FROM grafana/grafana-oss:12.0.1
+FROM grafana/grafana-oss:12.1.0
 
 # Label the image for better tracking and metadata
 LABEL maintainer="Volkov Labs <support@volkovlabs.io>" \
       description="Customized Grafana image for Business Suite" \
-      version="12.0.1"
+      version="12.1.0"
 
 # Switch to root user for system-level operations
 USER root
@@ -38,9 +38,12 @@ COPY --chown=grafana:root provisioning/ ${GF_PATHS_PROVISIONING}/
 ##################################################################
 COPY --chown=grafana:root img/fav32.png /usr/share/grafana/public/img/fav32.png
 COPY --chown=grafana:root img/fav32.png /usr/share/grafana/public/img/apple-touch-icon.png
-COPY --chown=grafana:root img/logo.svg /usr/share/grafana/public/img/grafana_icon.svg
 COPY --chown=grafana:root img/background.svg /usr/share/grafana/public/img/g8_login_dark.svg
 COPY --chown=grafana:root img/background.svg /usr/share/grafana/public/img/g8_login_light.svg
+
+# Replace Logo
+COPY src/img/logo.svg /tmp/logo.svg
+RUN find /usr/share/grafana/public/build/static/img -type f -name 'grafana_icon.*.svg' -exec sh -c 'mv /tmp/logo.svg "$(dirname {})/$(basename {})" && chmod 644 "$(dirname {})/$(basename {})"' \;
 
 ##################################################################
 # HTML & JS CUSTOMIZATION - Update titles, menus, and branding
@@ -58,7 +61,7 @@ RUN sed -i "s|\[\[.NavTree\]\],|nav,|g; \
     const connections = nav.find((element) => element.id === 'connections'); \
     if (connections) { connections['url'] = '/datasources'; connections['children'].shift(); } \
     const help = nav.find((element) => element.id === 'help'); \
-    if (help) { help['subTitle'] = 'Business Customization 12.0.1'; help['children'] = [];} \
+    if (help) { help['subTitle'] = 'Business Customization 12.1.0'; help['children'] = [];} \
     window.grafanaBootData = {|g" \
     /usr/share/grafana/public/views/index.html && \
     sed -i "s|window.grafanaBootData = {| \
