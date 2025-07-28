@@ -4,7 +4,8 @@ services:
       context: ./
       dockerfile: Dockerfile
     image: ghcr.io/volkovlabs/app:latest
-    entrypoint: /run.sh
+    environment:
+      - GF_INSTALL_PLUGINS=marcusolsson-static-datasource
     ports:
       - 3000:3000/tcp
     volumes:
