@@ -38,12 +38,16 @@ COPY --chown=grafana:root provisioning/ ${GF_PATHS_PROVISIONING}/
 ##################################################################
 COPY --chown=grafana:root img/fav32.png /usr/share/grafana/public/img/fav32.png
 COPY --chown=grafana:root img/fav32.png /usr/share/grafana/public/img/apple-touch-icon.png
-COPY --chown=grafana:root img/background.svg /usr/share/grafana/public/img/g8_login_dark.svg
-COPY --chown=grafana:root img/background.svg /usr/share/grafana/public/img/g8_login_light.svg
 
 # Replace Logo
+COPY img/logo.svg /usr/share/grafana/public/img/grafana_icon.svg
 COPY img/logo.svg /tmp/logo.svg
 RUN find /usr/share/grafana/public/build/static/img -type f -name 'grafana_icon.*.svg' -exec sh -c 'mv /tmp/logo.svg "$(dirname {})/$(basename {})" && chmod 644 "$(dirname {})/$(basename {})"' \;
+
+## Update Background
+COPY img/background.svg /tmp/background.svg
+RUN find /usr/share/grafana/public/build/static/img -type f -name 'g8_login_dark.*.svg' -exec sh -c 'cp /tmp/background.svg "$(dirname {})/$(basename {})" && chmod 644 "$(dirname {})/$(basename {})"' \;
+RUN find /usr/share/grafana/public/build/static/img -type f -name 'g8_login_light.*.svg' -exec sh -c 'mv /tmp/background.svg "$(dirname {})/$(basename {})" && chmod 644 "$(dirname {})/$(basename {})"' \;
 
 ##################################################################
 # HTML & JS CUSTOMIZATION - Update titles, menus, and branding
@@ -80,7 +84,7 @@ RUN find /usr/share/grafana/public/build/ -name "*.js" -type f \
     -exec sed -i 's|.push({target:"_blank",id:"version",text:`${..edition}${.}`,url:..licenseUrl,icon:"external-link-alt"})||g' {} \;
 
 # Update feature toggles in configuration
-RUN sed -i 's|\[feature_toggles\]|\[feature_toggles\]\npinNavItems = false\nonPremToCloudMigrations = false\ncorrelations = false|g' /usr/share/grafana/conf/defaults.ini
+RUN sed -i 's|\[feature_toggles\]|\[feature_toggles\]\npinNavItems=false\nonPremToCloudMigrations=false\ncorrelations=false|g' /usr/share/grafana/conf/defaults.ini
 
 ##################################################################
 # CLEANUP - Remove unused data sources and panels
