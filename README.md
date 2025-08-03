@@ -4,8 +4,6 @@
 [![YouTube](https://img.shields.io/badge/YouTube-Channel-red)](https://youtube.com/@volkovlabs)
 ![Docker](https://github.com/volkovlabs/business-custom/workflows/Docker/badge.svg)
 
-## Overview
-
 **Business Customization for Grafana** provides a tailored Docker image with a pre-configured Grafana setup, designed to streamline business use cases. Built on the latest Grafana version, this project offers a ready-to-use intructions for organizations looking to customize Grafana for their specific needs.
 
 ## Watch the Customization Tutorial
@@ -24,7 +22,7 @@ The **Business Suite** is a curated set of open-source plugins developed and mai
 
 [![Business Suite for Grafana](https://raw.githubusercontent.com/VolkovLabs/.github/main/business.png)](https://volkovlabs.io/plugins/)
 
-### Enterprise Support
+## Enterprise Support
 
 Elevate your experience with the [Business Suite Enterprise](https://volkovlabs.io/pricing/) plan, which includes:
 
@@ -32,12 +30,6 @@ Elevate your experience with the [Business Suite Enterprise](https://volkovlabs.
 - **Priority Features & Fixes**: Faster response to feature requests and bug resolutions.
 - **Personal Consultations**: In-person meetings for tailored guidance.
 - **Business Intelligence Platform**: Advanced tools and insights for decision-making.
-
-## Connect With Us
-
-We value your feedback and are always eager to engage with our community:
-
-- **Subscribe to our [YouTube Channel](https://youtube.com/@volkovlabs)**: Watch tutorials and leave comments.
 
 ## License
 
