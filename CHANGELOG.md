@@ -8,7 +8,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
-- Updated to Grafana 12.1.1 ([#127](https://github.com/volkovlabs/business-custom/pull/127))
+- Enabled Preinstall parameter to install plugins ([#128](https://github.com/volkovlabs/business-custom/pull/128))
+- Updated background dynamic image ([#129](https://github.com/volkovlabs/business-custom/pull/129))
+- Updated to Grafana 12.1.1 ([#131](https://github.com/volkovlabs/business-custom/pull/131))
 
 ## [12.1.0] - 2025-07-25
 
