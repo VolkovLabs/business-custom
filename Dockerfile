@@ -1,10 +1,10 @@
 # Use a specific version of Grafana OSS as the base image for reproducibility
-FROM grafana/grafana-oss:12.1.0
+FROM grafana/grafana-oss:12.1.1
 
 # Label the image for better tracking and metadata
 LABEL maintainer="Volkov Labs <support@volkovlabs.io>" \
       description="Customized Grafana image for Business Suite" \
-      version="12.1.0"
+      version="12.1.1"
 
 # Switch to root user for system-level operations
 USER root
@@ -23,7 +23,7 @@ ENV GF_ENABLE_GZIP=true \
     GF_EXPLORE_ENABLED=false \
     GF_NEWS_NEWS_FEED_ENABLED=false \
     GF_ALERTING_ENABLED=false \
-    GF_PUBLIC_DASHBOARDS_ENABLED=false \
+    GF_PUBLIC_DASHBOARDS_ENABLED=true \
     GF_UNIFIED_ALERTING_ENABLED=false \
 #    GF_PLUGINS_PREINSTALL_DISABLED=true \
     GF_PATHS_PROVISIONING=/etc/grafana/provisioning \
@@ -65,7 +65,7 @@ RUN sed -i "s|\[\[.NavTree\]\],|nav,|g; \
     const connections = nav.find((element) => element.id === 'connections'); \
     if (connections) { connections['url'] = '/datasources'; connections['children'].shift(); } \
     const help = nav.find((element) => element.id === 'help'); \
-    if (help) { help['subTitle'] = 'Business Customization 12.1.0'; help['children'] = [];} \
+    if (help) { help['subTitle'] = 'Business Customization 12.1.1'; help['children'] = [];} \
     window.grafanaBootData = {|g" \
     /usr/share/grafana/public/views/index.html && \
     sed -i "s|window.grafanaBootData = {| \
@@ -80,7 +80,6 @@ RUN find /usr/share/grafana/public/build/ -name "*.js" -type f \
     -exec sed -i 's|\[{target:"_blank",id:"documentation".*grafana_footer"}\]|\[\]|g' {} \; \
     -exec sed -i 's|({target:"_blank",id:"license",.*licenseUrl})|()|g' {} \; \
     -exec sed -i 's|({target:"_blank",id:"version",text:..versionString,url:.?"https://github.com/grafana/grafana/blob/main/CHANGELOG.md":void 0})|()|g' {} \; \
-    -exec sed -i 's|(0,t.jsx)(d.I,{tooltip:(0,b.t)("dashboard.toolbar.switch-old-dashboard","Switch to old dashboard page"),icon:"apps",onClick:()=>{s.Ny.partial({scenes:!1})}},"view-in-old-dashboard-button")|null|g' {} \; \
     -exec sed -i 's|.push({target:"_blank",id:"version",text:`${..edition}${.}`,url:..licenseUrl,icon:"external-link-alt"})||g' {} \;
 
 # Update feature toggles in configuration
